@@ -2,10 +2,12 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+import static config.ConfigHelper.ENVIRONMENT;
+
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:${environment}.properties"
+        "classpath:" + ENVIRONMENT + ".properties"
 })
 public interface WebConfig extends Config {
     @Key("password")

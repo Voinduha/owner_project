@@ -4,6 +4,8 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class ConfigHelper {
 
+    public static final String ENVIRONMENT = "prod";
+
     public static String getPassword() {
         return getConfig().searchPassword();
     }
@@ -25,8 +27,6 @@ public class ConfigHelper {
     }
 
     private static WebConfig getConfig() {
-        if (System.getProperty("environment") == null) System.setProperty("environment", "prod"); // test, preprod
-
         return ConfigFactory.newInstance().create(WebConfig.class, System.getProperties());
     }
 
