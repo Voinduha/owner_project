@@ -27,7 +27,8 @@ public class ConfigHelper {
     }
 
     private static WebConfig getConfig() {
-        return ConfigFactory.newInstance().create(WebConfig.class, System.getProperties());
+        return ConfigFactory.newInstance().
+                create(WebConfig.class, System.getProperties());
     }
 
 }

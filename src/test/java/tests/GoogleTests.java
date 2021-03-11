@@ -26,5 +26,7 @@ public class GoogleTests {
         $(byName("q")).setValue(searchItem).pressEnter();
 
         $("html").shouldHave(text(searchResult));
+
+
     }
 }
